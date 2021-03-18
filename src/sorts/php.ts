@@ -1,11 +1,11 @@
 import { getSortingSetting } from "../registration";
 
 export default text => {
-  const sort = function(a,b) {
-    if(getSortingSetting() === 'length') {
+  const sort = (a: string, b: string) => {
+    if (getSortingSetting() === 'length') {
       return a.length - b.length;
     }
-    return a.substr(4) > b.substr(4);
+    return a.localeCompare(b);
   };
 
   let uses = text

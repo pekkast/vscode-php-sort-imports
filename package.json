@@ -3,7 +3,14 @@
   "displayName": "PHP Sort Imports",
   "description": "Sort php imports alphabetically or via length",
   "version": "0.0.1",
-  "publisher": "Simon Sperling",
+  "publisher": "pekkast",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pekkast/vscode-php-sort-imports"
+  },
+  "bugs": {
+    "url": "https://github.com/pekkast/vscode-php-sort-imports/issues"
+  },
   "engines": {
     "vscode": "^1.28.0"
   },
@@ -45,21 +52,24 @@
         },
         "phpSortImports.languages": {
           "type": "array",
-          "default": ["php"],
+          "default": [
+            "php"
+          ],
           "description": "Languages to sort on save."
         }
       }
     }
   },
   "scripts": {
-    "vscode:prepublish": "yarn run compile",
+    "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "yarn run compile && node ./node_modules/vscode/bin/test"
+    "test": "npm run compile && node ./node_modules/vscode/bin/test",
+    "build": "npx vsce package"
   },
   "devDependencies": {
-    "typescript": "^2.6.1",
+    "typescript": "^3.2",
     "vscode": "^1.1.21",
     "tslint": "^5.8.0",
     "@types/node": "^8.10.25",
